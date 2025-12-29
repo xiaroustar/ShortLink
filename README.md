@@ -1,6 +1,8 @@
 # ShortLink
 免费又可爱的轻量化短链接系统喵
 
+演示站：[t.aa1.cn](https://t.aa1.cn "https://t.aa1.cn")
+
 ![GitHub Repo Size](https://img.shields.io/badge/Repo-轻量级-green)
 ![GitHub stars](https://img.shields.io/badge/Stars-⭐️-yellow)
 ![GitHub issues](https://img.shields.io/badge/Issues-0-blue)
@@ -13,10 +15,10 @@
 
 # 贡献成员
 
-夏柔 | [www.aa1.cn](https://www.aa1.cn "https://www.aa1.cn")
+1. 夏柔 | [www.aa1.cn](https://www.aa1.cn "https://www.aa1.cn")
 
 
-
+--
 
 ## 功能特色
 
@@ -42,6 +44,7 @@
   - 弹窗模态（隐私条款、联系方式）  
 - **后端**：
   - PHP + Mysql5.7（处理短链接创建）  
+  - PHP扩展：Redis （支持高并发）
   - 防止滥用（蜜罐字段验证、请求频率限制）  
 
 ---
@@ -65,6 +68,7 @@
 │ └── style.css # 样式文件
 ├── api/
 │ └── create.php # 短链接创建接口
+│ └── redirect.php # 短链接跳转接口
 └── README.md # 项目说明
 ---
 
@@ -72,13 +76,24 @@
 
 1. 克隆仓库：
    ```bash
-   git clone https://github.com/你的用户名/链接裁缝.git
+   git clone https://github.com/xiaroustar/ShortLink.git
 部署到支持 PHP 的服务器（Apache/Nginx + PHP）
 
 2. 打包程序上传部署：
 
 php版本要求：7.4
+  - PHP扩展：Redis
 数据库版本要求：Mysql5.7
+
+伪静态（Nginx版，Apache请自行转换）
+
+```bash
+location / {
+    rewrite "^/([a-zA-Z0-9]{3,8})$" /api/redirect.php?code=$1 last;
+    
+    # 其他正常请求处理
+    try_files $uri $uri/ =404;
+}
 
 数据库创建语句：
 ```bash
