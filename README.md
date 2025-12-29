@@ -1,7 +1,10 @@
 # ShortLink
 免费又可爱的轻量化短链接系统喵
 
-演示站：[t.aa1.cn](https://t.aa1.cn "https://t.aa1.cn")
+演示站：[t.aa1.cn](https://t.aa1.cn "https://t.aa1.cn") （红了，微信QQ内不要点）
+
+演示站：[tz.aa1.cn](https://tz.aa1.cn "https://tz.aa1.cn") 
+
 
 ![GitHub Repo Size](https://img.shields.io/badge/Repo-轻量级-green)
 ![GitHub stars](https://img.shields.io/badge/Stars-⭐️-yellow)
