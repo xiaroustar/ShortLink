@@ -94,7 +94,7 @@ location / {
     # 其他正常请求处理
     try_files $uri $uri/ =404;
 }
-
+```
 数据库创建语句：
 ```bash
 CREATE TABLE `ip_rate_limit` (
@@ -124,7 +124,7 @@ CREATE TABLE `short_sequence` (
   `id` bigint(20) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+```
 
 
 配置数据库（database.php 里面有自己的网址，替换一下即可）
